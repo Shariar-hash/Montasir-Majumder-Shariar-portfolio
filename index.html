@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shariars Portfolio</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        
+body{
+    background-color: rgb(28, 28, 33);
+    color: white;
+    font-family: 'poppins',sans-serif;
+    margin: 0;
+    padding: 0;
+}
+nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+
+}
+nav ul{
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            gap: 10px;
+            width: 100%;
+}
+nav ul li{
+    display: inline;
+  
+    
+}
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    position: relative;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+nav ul li a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 0;
+            height: 3px;
+            background-color: #007bff;
+            transition: width 0.3s ease;
+}
+nav ul li a.active::after {
+            width: 100%;
+}
+nav ul li a:hover{
+    text-decoration: none;
+    color: rgb(162, 160, 160);
+    font-size: 1.04rem;
+    transform: scale(1.04);
+}
+section {
+            min-height: 100vh;
+            padding-top: 60px; /* Add padding to prevent content from hiding behind navbar */
+}
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            nav ul {
+                gap: 8px;
+            }
+
+            nav ul li a {
+                font-size: 0.9rem;
+                padding: 3px 5px;
+            }
+}
+
+        @media screen and (max-width: 480px) {
+            nav ul {
+                gap: 4px;
+            }
+
+            nav ul li a {
+                font-size: 0.75rem;
+                padding: 3px 4px;
+            }
+}
+    
+main hr{
+    border:0;
+    background: purple;
+    height: 1.2px;
+    margin: 40px 84px;
+}
+
+.left{
+    font-size: 1.5rem;
+}
+.firstSection{
+    display: flex;
+    justify-content:space-around;
+    margin: 80px 0;
+}
+.firstSection> div{
+    width: 35%;
+}
+.leftSection {
+    font-size: 2.5rem; /* Increased from 3rem to make it more prominent */
+    line-height: 1.5;
+    margin: 30px 0;
+    animation: fadeIn 1.5s ease-in-out
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.rightSection img {
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.purple{
+    color:blueviolet;
+    font-weight: bold;
+}
+#element{
+    color:blueviolet;
+}
+.button-container {
+    display: flex;
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap; /* Ensure responsiveness */
+}
+/* Button Styling */
+.btn {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Icon Styling */
+.icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+/* Hover Effect */
+.btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.7);
+}
+
+/* Animation for Fade-In Effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.secondSection {
+    padding: 60x 0;
+    background-color: rgb(28, 28, 33);
+    text-align: center;
+}
+
+.secondSection h1 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.Vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    padding: 30px;
+    background-color: rgb(207, 189, 189);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.Vertical {
+    animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.image-top {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+}
+.Vertical:hover {
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.7);
+}
+
+
+.verticle-text {
+    font-size: 1.1rem;
+    color: #333;
+    text-align: center;
+}
+.verticle-text a {
+    color: #007bff;
+    text-decoration: none;
+}
+.verticle-text a:hover {
+    text-decoration: underline;
+}
+/* html {
+    scroll-behavior: smooth;
+} */
+/* Skills Section Styling */
+.skillsSection {
+    padding: 150px 40px;
+    background-color: rgb(32, 32, 39);
+    text-align: center;
+}
+
+.skillsSection h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #f7eeee;
+}
+
+/* Skills Container */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Individual Skill Box */
+.skill {
+    width: 150px;
+    padding: 15px;
+    background-color: rgb(112, 85, 119);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(242, 174, 174, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideIn 1s ease-in-out;
+}
+
+.skill img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.skill p {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Hover Animation */
+.skill:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.7);
+}
+
+/* Slide-In Animation */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .leftSection {
+        font-size: 2rem; /* Adjust for mobile */
+    }
+    .skills-container {
+        gap: 10px;
+    }
+    .skill {
+        width: 120px;
+    }
+}
+
+.thirdSection {
+    padding: 50px 20px;
+    background-color: rgb(28, 28, 33);
+}
+.thirdSection h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #f7f0f0;
+}
+
+
+
+.projects-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 10px;
+}
+
+.project-card {
+    background: rgb(120, 112, 112);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    transition: transform 0.4s ease,box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.project-card h2 {
+    color: #eedddd;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.project-content {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.project-image {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.project-description {
+    flex: 1;
+    min-width: 300px
+}
+
+.project-description p {
+    margin-bottom: 30px;
+    color: #eed1d1;
+    line-height: 1.6;
+}
+
+.project-description ul {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.project-description ul li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.project-description ul li:before {
+    
+    position: absolute;
+    left: 0;
+    
+    
+}
+
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: white;
+    background-color: #20b215; /* Green background */
+    padding: 8px 16px;
+    border: 1px solid #20b215;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    fill: white; /* Ensures icons are white */
+}
+
+.github-link:hover {
+    background-color: #2456c2; /* Blue on hover */
+    color: white;
+    border-color: #2456c2;
+    fill: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .project-image {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 15px;
+    }
+
+    .project-description ul {
+        padding: 0;
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .thirdSection h1 {
+        font-size: 2rem;
+    }
+
+    .project-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .project-card {
+        padding: 20px;
+    }
+
+    .github-link {
+        padding: 8px 12px;
+    }
+}
+.fourthSection {
+    padding: 50px 20px;
+    background-color: rgb(28, 28, 33);
+}
+
+.fourthSection h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #f7f0f0;
+}
+
+.achievements-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.achievement-card {
+    background: #b9adad;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+}
+
+.achievement-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    gap: 20px;
+}
+
+.award-icon {
+    font-size: 2.5rem;
+    color: #FFB347;
+}
+
+.achievement-header h2 {
+    color: #b2b2a4;
+    font-size: 24px;
+    margin: 0;
+}
+
+.achievement-content {
+    display: flex;
+    gap: 30px;
+}
+
+.medal-badge {
+    flex-shrink: 0;
+}
+
+.medal {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.medal.bronze {
+    background: linear-gradient(45deg, #CD7F32, #e0aa76);
+    box-shadow: 0 4px 15px rgba(205, 127, 50, 0.3);
+}
+
+.medal-front {
+    width: 130px;
+    height: 130px;
+    background: radial-gradient(circle at 30% 30%, #e0aa76, #CD7F32);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.achievement-details {
+    flex: 1;
+}
+
+.award-description {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.achievement-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.achievement-list li {
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+    color: #666;
+}
+
+.achievement-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #2df134;
+    font-weight: bold;
+}
+
+.achievement-date {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #49433caf;
+}
+
+.achievement-date i {
+    color: #921313;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .achievement-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .medal-badge {
+        margin-bottom: 20px;
+    }
+
+    .achievement-list li {
+        text-align: left;
+    }
+}
+.fifthSection {
+    padding: 50px 10px;
+    background-color: #9b8296;
+}
+
+.fifthSection h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: rgb(28, 28, 33);
+}
+
+.contact-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.social-logo {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.social-link:hover .social-logo {
+    transform: scale(1.1);
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Social Media Brand Colors */
+.github {
+    background-color: #333;
+}
+
+.github:hover {
+    background-color: #24292e;
+}
+
+.linkedin {
+    background-color: #0077b5;
+}
+
+.linkedin:hover {
+    background-color: #005e93;
+}
+
+.facebook {
+    background-color: #1877f2;
+}
+
+.facebook:hover {
+    background-color: #0d65d9;
+}
+
+.instagram {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+}
+
+.instagram:hover {
+    background: linear-gradient(45deg, #3951d9, #4c47c9, #7633a3, #b02f75, #d41e5f, #ea1a1a);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-link {
+        width: 80%;
+        justify-content: center;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left">Shariars portfolio</div>
+            <div class="right">
+                <ul>
+
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#achivments">Achivements</a></li>
+                    <li><a href="#contact">contact me</a></li>
+                </ul>
+            </div>
+
+
+        </nav>
+
+    </header>
+    <main>
+        <section id="home"class ="firstSection">
+            <div class="leftSection">
+                Hi,I am Montasir Majumder <span class="purple">Shariar</span>
+                <div>
+                    I am a student.
+                </div>
+                <div>I have Interest in</div>
+                
+                <span id="element"></span>
+
+                <div class="button-container">
+                    <a href="https://github.com/Shariar-hash" target="_blank" class="btn">
+                        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" class="icon"> Visit My GitHub
+                    </a>
+                    <a href="C:/Users/Shariar/Downloads/MyCV.pdf" download class="btn">
+                        <img src="https://cdn-icons-png.flaticon.com/512/724/724933.png" alt="CV Icon" class="icon"> Download CV
+                    </a>
+                </div>
+                
+
+            </div>
+            <div class="rightSection">
+                <img src="C:\Users\Shariar\Downloads\my picture.png" alt="">
+            </div>
+
+        </section>
+        <section id="education" class="secondSection">
+            <h1>Education</h1>
+            <div class="box">
+                <div class="Vertical">
+                    <img class="image-top" src="C:\Users\Shariar\Downloads\download (2).png" alt="">
+                    <div class="verticle-text">
+                        Bachelor in Computer Science and Engineering - <a href="https://www.bracu.ac.bd/" target="_blank" rel="noopener noreferrer" class="university-link">Brac University</a> (2021-present) Cgpa:3.78
+                    </div>
+                </div>
+                <div class="Vertical">
+                    <img class="image-top" src="https://seeklogo.com/images/D/dr-mahbubur-rahman-molla-college-logo-AC87B7ECA8-seeklogo.com.png" alt="">
+                    <div class="verticle-text">
+                        Higher Secondary Certificate -<a href="https://dmrc.edu.bd/" target="_blank" rel="noopener noreferrer"> Dr Mahbubur Rahman Mollah College</a> (2017 - 2019) Grade:5.0
+                    </div>
+                </div>
+                <div class="Vertical">
+                    <img class="image-top" src="C:\Users\Shariar\Downloads\download.jpg" alt="">
+                    <div class="verticle-text">
+                        Secondary School Certificate -<a href="https://narayanganjhighschoolandcollege.edu.bd/" target="_blank" rel="noopener noreferrer">Narayanganj High School and college</a>  (2015 - 2017)       Grade:5.0
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skillsSection">
+            <h1>My Skills</h1>
+            <div class="skills-container">
+                <div class="skill">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174854.png" alt="HTML">
+                    <p>HTML</p>
+                </div>
+                <div class="skill">
+                    <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="CSS">
+                    <p>CSS</p>
+                </div>
+                <div class="skill">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JavaScript">
+                    <p>JavaScript</p>
+                </div>
+                <div class="skill">
+                    <img src="data:image/jpeg;base64,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 alt="Bootstrap">
+                    <p>Python</p>
+                </div>
+                <div class="skill">
+                    <img src="https://cdn-icons-png.flaticon.com/512/919/919830.png" alt="Laravel">
+                    <p>Laravel</p>
+                </div>
+                <div class="skill">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968322.png" alt="GitHub">
+                    <p>GitHub</p>
+                </div>
+            </div>
+
+        </section>
+
+
+
+        
+
+    
+        <section id="projects" class="thirdSection">
+            <h1>Projects</h1>
+            <div class="projects-container">
+                <div class="project-card">
+                    <h2>PetShop Platform</h2>
+                    <div class="project-content">
+                        <img class="project-image" src="C:\Users\Shariar\Downloads\download (1).jpg" alt="PetShop Project">
+                        <div class="project-description">
+                            <p>A comprehensive platform for pet lovers that enables:</p>
+                            <ul>
+                                <li>Buy and sell pets through a secure marketplace</li>
+                                <li>Pet adoption services connecting animals with loving homes</li>
+                                <li>Lost & found pet reporting system</li>
+                                <li>Community features for pet owners to connect</li>
+                            </ul>
+                            <a href="https://github.com/Shariar-hash" class="github-link" target="_blank">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="project-card">
+                    <h2>Daily Checkmate</h2>
+                    <div class="project-content">
+                        <img class="project-image" src="data:image/png;base64,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" alt="Daily Checkmate Project">
+                        <div class="project-description">
+                            <p>A productivity tool designed to help users build better habits and manage daily tasks:</p>
+                            <ul>
+                                <li>Smart todo list with priority management</li>
+                                <li>Customizable reminder system</li>
+                                <li>Habit tracking with progress visualization</li>
+                                <li>Motivational features to encourage consistency</li>
+                            </ul>
+                            <a href="https://github.com/Shariar-hash/daily_checkmate" class="github-link" target="_blank">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="achivments" class="fourthSection">
+            <h1>Achievements</h1>
+        <div class="achievements-container">
+            <div class="achievement-card">
+                <div class="achievement-header">
+                    <div class="award-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h2>Duke of Edinburgh Bronze Award</h2>
+                </div>
+                <div class="achievement-content">
+                    <div class="medal-badge">
+                        <div class="medal bronze">
+                            <div class="medal-front">
+                                <span>Bronze</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="achievement-details">
+                        <p class="award-description">Successfully completed the Duke of Edinburgh's Bronze Award program, demonstrating excellence in:</p>
+                        <ul class="achievement-list">
+                            <li>Physical Recreation: Regular participation in sports and fitness activities</li>
+                            <li>Skills Development: Mastered new competencies and personal interests</li>
+                            <li>Voluntary Service: Contributed meaningful hours to community service</li>
+                            <li>Adventurous Journey: Completed challenging expeditions and team activities</li>
+                        </ul>
+                        <div class="achievement-date">
+                            <i class="far fa-calendar-alt"></i>
+                            <span>Award Received: 2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Contact Section -->
+    <section id="contact" class="fifthSection">
+        <h1>Contact Me</h1>
+        <div class="contact-container">
+            <div class="social-links">
+                <a href="https://github.com/Shariar-hash" class="social-link github" target="_blank">
+                    <svg class="social-logo" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/>
+                    </svg>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://linkedin.com/in/yourusername" class="social-link linkedin" target="_blank">
+                    <svg class="social-logo" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M19 0H5a5 5 0 00-5 5v14a5 5 0 005 5h14a5 5 0 005-5V5a5 5 0 00-5-5zM8 19H5V8h3v11zM6.5 6.732c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765c1.396-2.586 7-2.777 7 2.476V19z"/>
+                    </svg>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://facebook.com/yourusername" class="social-link facebook" target="_blank">
+                    <svg class="social-logo" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                    <span>Facebook</span>
+                </a>
+                <a href="https://instagram.com/yourusername" class="social-link instagram" target="_blank">
+                    <svg class="social-logo" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                    </svg>
+                    <span>Instagram</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+       
+    </main>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+          strings: ['Mathemetics','Machine Learning','AI','Computer Networks','Web Development'],
+          typeSpeed: 100,
+        });
+    </script>
+     <script>
+        // Function to determine which section is currently in view
+        function getCurrentSection() {
+            const sections = document.querySelectorAll('section');
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100; // Offset for navbar height
+                const sectionBottom = sectionTop + section.offsetHeight;
+                
+                if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
+                    currentSection = section.id;
+                }
+            });
+            
+            return currentSection;
+        }
+
+        // Function to update active link in navbar
+        function updateActiveLink() {
+            const currentSection = getCurrentSection();
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                    
+                }
+            });
+        }
+
+        // Smooth scroll to section when clicking nav links
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Update active link on scroll
+        window.addEventListener('scroll', updateActiveLink);
+        
+        // Update active link on page load
+        window.addEventListener('load', updateActiveLink);
+    </script>
+
+
+    
+
+</body>
+</html>
