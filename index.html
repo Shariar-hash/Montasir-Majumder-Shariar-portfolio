@@ -530,6 +530,8 @@ main hr{
 .achievement-content {
     display: flex;
     gap: 30px;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .medal-badge {
@@ -549,6 +551,10 @@ main hr{
     background: linear-gradient(45deg, #CD7F32, #e0aa76);
     box-shadow: 0 4px 15px rgba(205, 127, 50, 0.3);
 }
+.medal.gold {
+    background: linear-gradient(45deg, #FFD700, #FFEC8B);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+}
 
 .medal-front {
     width: 130px;
@@ -559,10 +565,12 @@ main hr{
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.0rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
+    text-align: center;
+    padding: 5px;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -615,6 +623,7 @@ main hr{
         flex-direction: column;
         align-items: center;
         text-align: center;
+        gap: 20px;
     }
 
     .medal-badge {
@@ -624,6 +633,14 @@ main hr{
     .achievement-list li {
         text-align: left;
     }
+    .fourthSection h1 {
+        font-size: 2.5rem;
+    }
+
+    .award-description {
+        font-size: 1rem;
+    }
+
 }
 .fifthSection {
     padding: 50px 10px;
@@ -906,6 +923,37 @@ main hr{
                     </div>
                 </div>
             </div>
+            <div class="achievement-card">
+                <div class="achievement-header">
+                    <div class="award-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h2>Merit-Based Scholarship</h2>
+                </div>
+                <div class="achievement-content">
+                    <div class="medal-badge">
+                        <div class="medal gold">
+                            <div class="medal-front">
+                                <span>Scholarship</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="achievement-details">
+                        <p class="award-description">Awarded a merit-based scholarship for outstanding academic performance at university, recognizing achievements in:</p>
+                        <ul class="achievement-list">
+                            <li>Consistent top grades across all semesters</li>
+                            <li>Excellence in coursework and projects</li>
+                            
+                        </ul>
+                        <div class="achievement-date">
+                            <i class="far fa-calendar-alt"></i>
+                            <span>Scholarship Awarded: 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
         </div>
     </section>
 
