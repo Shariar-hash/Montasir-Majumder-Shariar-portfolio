@@ -14,10 +14,9 @@
     <meta property="og:image" content="https://montasir-majumder-shariar-portfolio.vercel.app/profile.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Montasir Majumder Shariar's Profile Picture" />    
+    <meta property="og:image:height" content="630" />    
     <meta property="og:url" content="https://montasir-majumder-shariar-portfolio.vercel.app/">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="Shariar's Portfolio">
     <style>
         *{
             margin: 0;
@@ -207,6 +206,84 @@ main hr{
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+about-section {
+    padding: 80px 20px;
+    background-color: #1e1e2f;
+    color: #fff;
+    text-align: center;
+    animation: fadeIn 7s ease-in-out;
+}
+
+.about-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color:  #f7eeee;
+}
+
+.about-text {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    margin: 10px auto;
+    max-width: 800px;
+    color: #f1f1f1;
+    animation: slideIn 3s ease-in-out;
+}
+
+.about-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #ff6b6b;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #4dabf7;
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-title {
+        font-size: 2.5rem;
+    }
+    .about-text {
+        font-size: 1.1rem;
+        padding: 0 10px;
+    }
+    .about-buttons {
+        flex-direction: column;
+        gap: 10px;
     }
 }
 
@@ -789,6 +866,7 @@ main hr{
                 <ul>
 
                     <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about" class="about-section">About me</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
@@ -828,6 +906,28 @@ main hr{
             </div>
 
         </section>
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <h1 class="about-title">About Me</h1>
+                <p class="about-text">
+                    Hi, I'm Montasir Majumder Shariar, a passionate student with a strong enthusiasm for technology and continuous learning.
+                    I enjoy exploring the realms of web development, AI, and computer networks. My goal is to merge creativity with technology
+                    to build impactful projects while constantly pushing my boundaries. I thrive on challenges and believe in lifelong learning.
+                </p>
+                <p class="about-text">
+                    Whether it's developing dynamic websites, solving complex algorithms, or diving into machine learning, I approach every task
+                    with dedication and a growth mindset. I'm excited about future opportunities that allow me to expand my knowledge and contribute meaningfully.
+                </p>
+                <div class="about-buttons">
+                    <a href="#skills" class="btn btn-primary">View My Skills</a>
+                    <a href="#projects" class="btn btn-secondary">Explore Projects</a>
+                </div>
+            </div>
+        </section>
+        
+        
+
+
         <section id="education" class="secondSection">
             <h1>Education</h1>
             <div class="box">
@@ -1085,6 +1185,7 @@ main hr{
                 }
             });
         }
+        
 
         // Smooth scroll to section when clicking nav links
         document.querySelectorAll('nav a').forEach(link => {
@@ -1102,6 +1203,19 @@ main hr{
         
         // Update active link on page load
         window.addEventListener('load', updateActiveLink);
+        window.addEventListener("scroll", () => {
+            const aboutSection = document.querySelector(".about-section");
+            const sectionPos = aboutSection.getBoundingClientRect().top;
+            const screenPos = window.innerHeight / 1.3;
+
+            if (sectionPos < screenPos) {
+                aboutSection.style.opacity = "1";
+                aboutSection.style.transform = "translateY(0)";
+            }
+        });
+                
+
+        
     </script>
 
 
