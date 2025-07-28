@@ -242,23 +242,104 @@ about-section {
     background-color: #1e1e2f;
     color: #fff;
     text-align: center;
-    animation: fadeIn 7s ease-in-out;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.about-section.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .about-title {
     text-align: center;
     font-size: 3rem;
     margin-bottom: 20px;
-    color:  #f7eeee;
+    color: #f7eeee;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: titleSlideIn 1.2s ease-out 0.3s forwards;
+    position: relative;
+}
+
+.about-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ff6b6b, #4dabf7);
+    animation: lineExpand 1s ease-out 1.5s forwards;
 }
 
 .about-text {
     font-size: 1.25rem;
     line-height: 1.8;
-    margin: 10px auto;
+    margin: 20px auto;
     max-width: 800px;
     color: #f1f1f1;
-    animation: slideIn 3s ease-in-out;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.about-text:nth-of-type(1) {
+    animation: textFadeInUp 1s ease-out 0.8s forwards;
+}
+
+.about-text:nth-of-type(2) {
+    animation: textFadeInUp 1s ease-out 1.2s forwards;
+}
+
+.about-text span.highlight {
+    background: linear-gradient(45deg, #ff6b6b, #4dabf7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+    animation: colorShift 3s ease-in-out infinite;
+}
+
+@keyframes titleSlideIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(30px) scale(0.9); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0) scale(1); 
+    }
+}
+
+@keyframes textFadeInUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+@keyframes lineExpand {
+    from { width: 0; }
+    to { width: 60px; }
+}
+
+@keyframes colorShift {
+    0%, 100% { 
+        background: linear-gradient(45deg, #ff6b6b, #4dabf7);
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+    50% { 
+        background: linear-gradient(45deg, #4dabf7, #ff6b6b);
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
 }
 
 .about-buttons {
@@ -266,6 +347,9 @@ about-section {
     justify-content: center;
     gap: 20px;
     margin-top: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: buttonsFadeIn 1s ease-out 1.6s forwards;
 }
 
 .btn {
@@ -273,32 +357,52 @@ about-section {
     border-radius: 30px;
     text-decoration: none;
     font-size: 1.1rem;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
 }
 
 .btn-primary {
-    background-color: #ff6b6b;
+    background: linear-gradient(135deg, #ff6b6b, #ff5252);
     color: white;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
 }
 
 .btn-secondary {
-    background-color: #4dabf7;
+    background: linear-gradient(135deg, #4dabf7, #339af0);
     color: white;
+    box-shadow: 0 4px 15px rgba(77, 171, 247, 0.3);
 }
 
 .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes slideIn {
-    from { transform: translateY(30px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+@keyframes buttonsFadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
 }
 
 /* Responsive Design */
@@ -313,6 +417,11 @@ about-section {
     .about-buttons {
         flex-direction: column;
         gap: 10px;
+    }
+    
+    .btn {
+        width: 80%;
+        margin: 0 auto;
     }
 }
 
@@ -763,126 +872,255 @@ about-section {
 
 }
 .fifthSection {
-    padding: 50px 10px;
-    background-color: #9b8296;
+    padding: 60px 20px 40px;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    position: relative;
+    margin-top: 50px;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.fifthSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff08"><polygon points="0,0 1000,0 0,100"/></svg>');
+    background-size: 100% 100%;
 }
 
 .fifthSection h1 {
     text-align: center;
-    margin-bottom: 40px;
-    color: rgb(28, 28, 33);
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 2.2rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 1;
+    letter-spacing: 1px;
+}
+
+.fifthSection h1::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    margin: 20px auto;
+    border-radius: 2px;
+    box-shadow: 0 2px 10px rgba(79, 172, 254, 0.4);
 }
 
 .contact-container {
-    max-width: 500px;
+    max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 25px;
     flex-wrap: wrap;
+    margin-bottom: 40px;
 }
 
 .social-link {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 15px 25px;
-    border-radius: 10px;
+    padding: 16px 24px;
+    border-radius: 12px;
     text-decoration: none;
     color: white;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.social-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    transition: left 0.6s;
+}
+
+.social-link:hover::before {
+    left: 100%;
 }
 
 .social-logo {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.3s ease;
+    width: 28px;
+    height: 28px;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
 
 .social-link:hover .social-logo {
-    transform: scale(1.1);
+    transform: scale(1.15) rotate(3deg);
 }
 
 .social-link:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Social Media Brand Colors */
+/* Social Media Brand Colors - Subtle Footer Theme */
 .github {
-    background-color: #333;
+    background: linear-gradient(135deg, #24292e, #1a1d21);
+    border-color: #333;
 }
 
 .github:hover {
-    background-color: #24292e;
+    background: linear-gradient(135deg, #333, #24292e);
+    transform: translateY(-3px) scale(1.02);
 }
 
 .linkedin {
-    background-color: #0077b5;
+    background: linear-gradient(135deg, #0077b5, #005e93);
+    border-color: #0077b5;
 }
 
 .linkedin:hover {
-    background-color: #005e93;
+    background: linear-gradient(135deg, #0088cc, #0077b5);
+    transform: translateY(-3px) scale(1.02);
 }
+
 .email {
-    background-color: #d44638;
+    background: linear-gradient(135deg, #d44638, #c53727);
+    border-color: #d44638;
 }
 
 .email:hover {
-    background-color: #c53727;
+    background: linear-gradient(135deg, #ea4c46, #d44638);
+    transform: translateY(-3px) scale(1.02);
 }
+
 .facebook {
-    background-color: #1877f2;
+    background: linear-gradient(135deg, #1877f2, #0d65d9);
+    border-color: #1877f2;
 }
 
 .facebook:hover {
-    background-color: #0d65d9;
+    background: linear-gradient(135deg, #3b82f6, #1877f2);
+    transform: translateY(-3px) scale(1.02);
 }
 
 .instagram {
-    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    background: linear-gradient(135deg, #405de6, #833ab4, #c13584);
+    border-color: #405de6;
 }
 
 .instagram:hover {
-    background: linear-gradient(45deg, #3951d9, #4c47c9, #7633a3, #b02f75, #d41e5f, #ea1a1a);
+    background: linear-gradient(135deg, #5b6ff0, #9146c7, #d54598);
+    transform: translateY(-3px) scale(1.02);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .fifthSection {
-        padding: 30px 15px;
+        padding: 40px 15px 30px;
+    }
+
+    .fifthSection h1 {
+        font-size: 2rem;
     }
 
     .social-links {
         flex-direction: column;
         gap: 15px;
+        margin-bottom: 30px;
     }
 
     .social-link {
         width: 100%;
         justify-content: center;
-        padding: 12px 20px;
+        padding: 15px 20px;
     }
 
     .social-logo {
-        width: 20px;
-        height: 20px;
+        width: 24px;
+        height: 24px;
     }
 
     .social-link span {
         font-size: 1rem;
+    }
+    
+    .footer-info {
+        padding: 0 10px;
+    }
+    
+    .footer-info p {
+        font-size: 0.9rem;
     }
 }
 
 /* Small Screen Optimizations */
 @media (max-width: 480px) {
     .social-link {
-        padding: 10px 15px;
+        padding: 12px 15px;
     }
+    
+    .fifthSection h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Footer Info Styles */
+.footer-info {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.footer-info p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    margin: 10px 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    font-weight: 400;
+}
+
+.footer-info .copyright {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 300;
+}
+
+.footer-info .heart {
+    color: #ff4757;
+    font-size: 1.1rem;
+    animation: heartbeat 2.5s ease-in-out infinite;
+    filter: drop-shadow(0 0 5px rgba(255, 71, 87, 0.5));
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
 }
 
     </style>
@@ -939,12 +1177,12 @@ about-section {
             <div class="about-content">
                 <h1 class="about-title">About Me</h1>
                 <p class="about-text">
-                    Hi, I'm Montasir Majumder Shariar, a passionate student with a strong enthusiasm for technology and continuous learning.
-                    I enjoy exploring the realms of web development, AI, and computer networks. My goal is to merge creativity with technology
+                    Hi, I'm <span class="highlight">Montasir Majumder Shariar</span>, a passionate student with a strong enthusiasm for <span class="highlight">technology</span> and continuous learning.
+                    I enjoy exploring the realms of <span class="highlight">web development</span>, <span class="highlight">AI</span>, and <span class="highlight">computer networks</span>. My goal is to merge creativity with technology
                     to build impactful projects while constantly pushing my boundaries. I thrive on challenges and believe in lifelong learning.
                 </p>
                 <p class="about-text">
-                    Whether it's developing dynamic websites, solving complex algorithms, or diving into machine learning, I approach every task
+                    Whether it's developing <span class="highlight">dynamic websites</span>, solving complex algorithms, or diving into <span class="highlight">machine learning</span>, I approach every task
                     with dedication and a growth mindset. I'm excited about future opportunities that allow me to expand my knowledge and contribute meaningfully.
                 </p>
                 <div class="about-buttons">
@@ -1127,9 +1365,9 @@ about-section {
         </div>
     </section>
 
-<!-- Contact Section -->
+<!-- Contact & Footer Section -->
     <section id="contact" class="fifthSection">
-        <h1>Contact Me</h1>
+        <h1>Get In Touch</h1>
         <div class="contact-container">
             <div class="social-links">
                 <a href="https://github.com/Shariar-hash" class="social-link github" target="_blank">
@@ -1138,31 +1376,40 @@ about-section {
                     </svg>
                     <span>GitHub</span>
                 </a>
-                <a href="https://linkedin.com/in/yourusername" class="social-link linkedin" target="_blank">
+                <a href="https://bd.linkedin.com/in/montasir-majumder-shariar-227a1b22a" class="social-link linkedin" target="_blank">
                     <svg class="social-logo" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M19 0H5a5 5 0 00-5 5v14a5 5 0 005 5h14a5 5 0 005-5V5a5 5 0 00-5-5zM8 19H5V8h3v11zM6.5 6.732c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765c1.396-2.586 7-2.777 7 2.476V19z"/>
                     </svg>
                     <span>LinkedIn</span>
                 </a>
-                <a href="mailto:montasirmajumder123@gmail.com" class="social-link email">
+                <a href="mailto:montasirmajumdar123@gmail.com" class="social-link email">
                     <svg class="social-logo" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                     </svg>
                     <span>Email</span>
                 
                 </a>
-                <a href="https://facebook.com/yourusername" class="social-link facebook" target="_blank">
+                <a href="https://www.facebook.com/share/1CL1LmDxMk/" class="social-link facebook" target="_blank">
                     <svg class="social-logo" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                     </svg>
                     <span>Facebook</span>
                 </a>
-                <a href="https://instagram.com/yourusername" class="social-link instagram" target="_blank">
+                <a href="https://www.instagram.com/muntasir_shariar?igsh=M3gxY243bTR2ZmF4" class="social-link instagram" target="_blank">
                     <svg class="social-logo" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
                     </svg>
                     <span>Instagram</span>
                 </a>
+            </div>
+            
+            <div class="footer-info">
+                <p>📧 montasirmajumdar123@gmail.com</p>
+                <p>📱 Available for exciting opportunities and collaborations</p>
+                <p>🎓 Computer Science & Engineering Student at BRAC University</p>
+                <p class="copyright">
+                    Made with <span class="heart">♥</span> by Montasir Majumder Shariar | © 2025 All Rights Reserved
+                </p>
             </div>
         </div>
     </section>
@@ -1186,11 +1433,11 @@ about-section {
      <script>
         // Function to determine which section is currently in view
         function getCurrentSection() {
-            const sections = document.querySelectorAll('section');
+            const sections = document.querySelectorAll('section[id]');
             let currentSection = '';
             
             sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100; // Offset for navbar height
+                const sectionTop = section.offsetTop - 120; // Offset for navbar height
                 const sectionBottom = sectionTop + section.offsetHeight;
                 
                 if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
@@ -1204,26 +1451,31 @@ about-section {
         // Function to update active link in navbar
         function updateActiveLink() {
             const currentSection = getCurrentSection();
-            const navLinks = document.querySelectorAll('nav a');
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
             
             navLinks.forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('href') === `#${currentSection}`) {
                     link.classList.add('active');
-                    
                 }
             });
         }
         
 
         // Smooth scroll to section when clicking nav links
-        document.querySelectorAll('nav a').forEach(link => {
+        document.querySelectorAll('nav a[href^="#"]').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 const targetId = link.getAttribute('href');
-                document.querySelector(targetId).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    const offsetTop = targetElement.offsetTop - 70; // Account for fixed navbar
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
 
@@ -1232,14 +1484,39 @@ about-section {
         
         // Update active link on page load
         window.addEventListener('load', updateActiveLink);
+        
+        // About section animation trigger
         window.addEventListener("scroll", () => {
             const aboutSection = document.querySelector(".about-section");
-            const sectionPos = aboutSection.getBoundingClientRect().top;
-            const screenPos = window.innerHeight / 1.3;
+            if (aboutSection) {
+                const sectionPos = aboutSection.getBoundingClientRect().top;
+                const screenPos = window.innerHeight / 1.3;
 
-            if (sectionPos < screenPos) {
-                aboutSection.style.opacity = "1";
-                aboutSection.style.transform = "translateY(0)";
+                if (sectionPos < screenPos && !aboutSection.classList.contains('animate')) {
+                    aboutSection.classList.add('animate');
+                }
+            }
+        });
+
+        // Intersection Observer for better performance (alternative to scroll event)
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observe the about section
+        document.addEventListener('DOMContentLoaded', () => {
+            const aboutSection = document.querySelector('.about-section');
+            if (aboutSection) {
+                observer.observe(aboutSection);
             }
         });
                 
