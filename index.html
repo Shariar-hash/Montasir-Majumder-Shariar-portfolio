@@ -128,7 +128,34 @@ section {
                 font-size: 0.9rem;
                 padding: 3px 5px;
             }
-}
+            
+            /* Mobile button styling */
+            .button-container {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+                width: 100%;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                padding: 12px 20px;
+                font-size: 1rem;
+                justify-content: center;
+                text-align: center;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            
+            .icon {
+                width: 20px;
+                height: 20px;
+                margin-right: 8px;
+                flex-shrink: 0;
+            }
+        }
 
         @media screen and (max-width: 480px) {
             nav ul {
@@ -139,7 +166,21 @@ section {
                 font-size: 0.68rem;
                 padding: 3px 4px;
             }
-}
+            
+            /* Small mobile button styling */
+            .btn {
+                width: 100%;
+                max-width: 250px;
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .icon {
+                width: 18px;
+                height: 18px;
+                margin-right: 6px;
+            }
+        }
     
 main hr{
     border:0;
@@ -201,7 +242,7 @@ main hr{
 .btn {
     display: flex;
     align-items: center;
-    padding: 10px 20px;
+    padding: 12px 24px;
     background-color: #007bff;
     color: white;
     text-decoration: none;
@@ -210,6 +251,15 @@ main hr{
     font-size: 1.1rem;
     box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
     animation: fadeIn 1s ease-in-out;
+    min-width: fit-content;
+    white-space: nowrap;
+    justify-content: center;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.6);
 }
 
 /* Icon Styling */
@@ -217,6 +267,7 @@ main hr{
     width: 24px;
     height: 24px;
     margin-right: 10px;
+    flex-shrink: 0;
 }
 
 /* Hover Effect */
@@ -1543,24 +1594,48 @@ about-section {
             const emailLink = document.querySelector('.social-link.email');
             if (emailLink) {
                 emailLink.addEventListener('click', function(e) {
-                    // For better PC compatibility, ensure the mailto link works
+                    e.preventDefault(); // Prevent default behavior
+                    
                     const email = 'montasirmajumdar123@gmail.com';
                     const subject = 'Hello from Portfolio Visitor';
                     const body = 'Hi Montasir,\n\nI visited your portfolio and would like to connect.\n\nBest regards';
                     
-                    // Create a more robust mailto URL
+                    // Create multiple fallback methods
                     const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
                     
-                    // Try to open the mailto link
+                    // Method 1: Try direct window.open
                     try {
-                        window.location.href = mailtoUrl;
+                        const newWindow = window.open(mailtoUrl, '_self');
+                        // If window.open returns null, it was blocked
+                        if (!newWindow) {
+                            throw new Error('Popup blocked');
+                        }
                     } catch (error) {
-                        // Fallback: copy email to clipboard
-                        navigator.clipboard.writeText(email).then(() => {
-                            alert('Email address copied to clipboard: ' + email);
-                        }).catch(() => {
-                            alert('Please send an email to: ' + email);
-                        });
+                        // Method 2: Try window.location
+                        try {
+                            window.location.href = mailtoUrl;
+                        } catch (error2) {
+                            // Method 3: Create temporary link and click it
+                            try {
+                                const tempLink = document.createElement('a');
+                                tempLink.href = mailtoUrl;
+                                tempLink.style.display = 'none';
+                                document.body.appendChild(tempLink);
+                                tempLink.click();
+                                document.body.removeChild(tempLink);
+                            } catch (error3) {
+                                // Method 4: Copy to clipboard as final fallback
+                                if (navigator.clipboard) {
+                                    navigator.clipboard.writeText(email).then(() => {
+                                        alert('Email address copied to clipboard: ' + email);
+                                    }).catch(() => {
+                                        prompt('Please copy this email address:', email);
+                                    });
+                                } else {
+                                    prompt('Please copy this email address:', email);
+                                }
+                            }
+                        }
                     }
                 });
             }
