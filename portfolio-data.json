@@ -1,0 +1,100 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://montasir-majumder-shariar-portfolio.vercel.app/#person",
+      "name": "Montasir Majumder Shariar",
+      "alternateName": "Shariar",
+      "jobTitle": "Web Developer",
+      "description": "Web Developer and Student specializing in creating interactive web applications including quiz platforms, financial management tools, and marketplace applications",
+      "url": "https://montasir-majumder-shariar-portfolio.vercel.app/",
+      "email": "montasirmajumdar123@gmail.com",
+      "image": "https://montasir-majumder-shariar-portfolio.vercel.app/profile.png",
+      "sameAs": [
+        "https://github.com/Shariar-hash",
+        "https://www.facebook.com/profile.php?id=100048866600298",
+        "https://quizthon.vercel.app/",
+        "https://budget-planner-ochre.vercel.app/"
+      ],
+      "knowsAbout": [
+        "Web Development",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "React",
+        "Quiz Applications",
+        "Financial Management Software",
+        "Pet Platform Development",
+        "Productivity Applications"
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Duke of Edinburgh Bronze Award",
+          "dateCreated": "2023"
+        }
+      ],
+      "worksFor": {
+        "@type": "EducationalOrganization",
+        "name": "BRAC University"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://montasir-majumder-shariar-portfolio.vercel.app/#website",
+      "url": "https://montasir-majumder-shariar-portfolio.vercel.app/",
+      "name": "Montasir Majumder Shariar Portfolio",
+      "description": "Portfolio website showcasing web development projects including Quizathon, Budget Planner, PetShop Platform, and Daily Checkmate",
+      "publisher": {
+        "@id": "https://montasir-majumder-shariar-portfolio.vercel.app/#person"
+      },
+      "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://montasir-majumder-shariar-portfolio.vercel.app/?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://quizthon.vercel.app/#app",
+      "name": "Quizathon",
+      "alternateName": "Quiz Platform",
+      "description": "Interactive quiz platform with multiple categories, difficulty levels, and comprehensive history tracking created by Montasir Majumder Shariar",
+      "url": "https://quizthon.vercel.app/",
+      "applicationCategory": "Educational",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@id": "https://montasir-majumder-shariar-portfolio.vercel.app/#person"
+      }
+    },
+    {
+      "@type": "SoftwareApplication", 
+      "@id": "https://budget-planner-ochre.vercel.app/#app",
+      "name": "Budget Planner",
+      "alternateName": "Budget Buddy",
+      "description": "Comprehensive financial management tool for expense tracking, income monitoring, savings goals, and budget planning created by Montasir Majumder Shariar",
+      "url": "https://budget-planner-ochre.vercel.app/",
+      "applicationCategory": "Finance",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@id": "https://montasir-majumder-shariar-portfolio.vercel.app/#person"
+      }
+    }
+  ]
+}
