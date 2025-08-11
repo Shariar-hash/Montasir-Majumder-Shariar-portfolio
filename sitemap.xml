@@ -3,18 +3,18 @@
     
     <!-- Main Portfolio Page -->
     <url>
-        <loc>https://montasir-majumder-shariar-portfolio.vercel.app/</loc>
+        <loc>https://alriar.me/</loc>
         <lastmod>2025-08-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     
-    <!-- Alternative Domain (if applicable) -->
+    <!-- Alternative Domain (Vercel URL that redirects) -->
     <url>
-        <loc>https://alriar.me/</loc>
+        <loc>https://montasir-majumder-shariar-portfolio.vercel.app/</loc>
         <lastmod>2025-08-11</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
+        <priority>0.8</priority>
     </url>
     
     <!-- Live Projects (External Links for SEO Reference) -->

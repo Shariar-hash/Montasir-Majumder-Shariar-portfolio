@@ -3,14 +3,14 @@
   "@graph": [
     {
       "@type": "Person",
-      "@id": "https://montasir-majumder-shariar-portfolio.vercel.app/#person",
+      "@id": "https://alriar.me/#person",
       "name": "Montasir Majumder Shariar",
       "alternateName": "Shariar",
       "jobTitle": "Web Developer",
       "description": "Web Developer and Student specializing in creating interactive web applications including quiz platforms, financial management tools, and marketplace applications",
-      "url": "https://montasir-majumder-shariar-portfolio.vercel.app/",
+      "url": "https://alriar.me/",
       "email": "montasirmajumdar123@gmail.com",
-      "image": "https://montasir-majumder-shariar-portfolio.vercel.app/profile.png",
+      "image": "https://alriar.me/profile.png",
       "sameAs": [
         "https://github.com/Shariar-hash",
         "https://www.facebook.com/profile.php?id=100048866600298",
@@ -42,19 +42,19 @@
     },
     {
       "@type": "WebSite",
-      "@id": "https://montasir-majumder-shariar-portfolio.vercel.app/#website",
-      "url": "https://montasir-majumder-shariar-portfolio.vercel.app/",
+      "@id": "https://alriar.me/#website",
+      "url": "https://alriar.me/",
       "name": "Montasir Majumder Shariar Portfolio",
       "description": "Portfolio website showcasing web development projects including Quizathon, Budget Planner, PetShop Platform, and Daily Checkmate",
       "publisher": {
-        "@id": "https://montasir-majumder-shariar-portfolio.vercel.app/#person"
+        "@id": "https://alriar.me/#person"
       },
       "potentialAction": [
         {
           "@type": "SearchAction",
           "target": {
             "@type": "EntryPoint",
-            "urlTemplate": "https://montasir-majumder-shariar-portfolio.vercel.app/?q={search_term_string}"
+            "urlTemplate": "https://alriar.me/?q={search_term_string}"
           },
           "query-input": "required name=search_term_string"
         }
@@ -75,7 +75,7 @@
         "priceCurrency": "USD"
       },
       "author": {
-        "@id": "https://montasir-majumder-shariar-portfolio.vercel.app/#person"
+        "@id": "https://alriar.me/#person"
       }
     },
     {
@@ -93,7 +93,7 @@
         "priceCurrency": "USD"
       },
       "author": {
-        "@id": "https://montasir-majumder-shariar-portfolio.vercel.app/#person"
+        "@id": "https://alriar.me/#person"
       }
     }
   ]
