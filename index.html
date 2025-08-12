@@ -95,6 +95,45 @@
           "worksFor": {
             "@type": "EducationalOrganization",
             "name": "BRAC University"
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://alriar.me/",
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Portfolio",
+                  "item": "https://alriar.me/"
+                },
+                {
+                  "@type": "ListItem", 
+                  "position": 2,
+                  "name": "Projects",
+                  "item": "https://alriar.me/#projects"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3, 
+                  "name": "Quizathon",
+                  "item": "https://quizthon.vercel.app/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 4,
+                  "name": "Budget Planner", 
+                  "item": "https://budget-planner-ochre.vercel.app/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 5,
+                  "name": "GitHub",
+                  "item": "https://github.com/Shariar-hash"
+                }
+              ]
+            }
           }
         }
         </script>
@@ -179,7 +218,27 @@
             "@type": "SearchAction",
             "target": "https://alriar.me/?q={search_term_string}",
             "query-input": "required name=search_term_string"
-          }
+          },
+          "hasPart": [
+            {
+              "@type": "WebPage",
+              "name": "Quizathon - Interactive Quiz Platform",
+              "url": "https://quizthon.vercel.app/",
+              "description": "Interactive quiz platform with multiple categories and difficulty levels"
+            },
+            {
+              "@type": "WebPage", 
+              "name": "Budget Planner - Financial Management Tool",
+              "url": "https://budget-planner-ochre.vercel.app/",
+              "description": "Comprehensive financial management application"
+            },
+            {
+              "@type": "WebPage",
+              "name": "GitHub Profile - Montasir Majumder Shariar",
+              "url": "https://github.com/Shariar-hash",
+              "description": "Source code repositories and development projects"
+            }
+          ]
         }
         </script>
     
@@ -1643,6 +1702,18 @@ html {
     border-color: rgba(255, 255, 255, 0.3);
 }
 
+/* Special styling for project links */
+.project-link {
+    background: linear-gradient(135deg, #28a745, #1e7e34) !important;
+    border: 2px solid #28a745;
+}
+
+.project-link:hover {
+    background: linear-gradient(135deg, #34ce57, #28a745) !important;
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(40, 167, 69, 0.4);
+}
+
 /* Social Media Brand Colors - Subtle Footer Theme */
 .github {
     background: linear-gradient(135deg, #24292e, #1a1d21);
@@ -1809,6 +1880,36 @@ html {
     </style>
 </head>
 <body>
+    <!-- Hidden Breadcrumb Navigation for Google Sitelinks -->
+    <nav style="display: none;" aria-label="Breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <ol>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a itemprop="item" href="https://alriar.me/">
+                    <span itemprop="name">Montasir Majumder Shariar Portfolio</span>
+                </a>
+                <meta itemprop="position" content="1" />
+            </li>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a itemprop="item" href="https://quizthon.vercel.app/">
+                    <span itemprop="name">Quizathon - Interactive Quiz Platform</span>
+                </a>
+                <meta itemprop="position" content="2" />
+            </li>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a itemprop="item" href="https://budget-planner-ochre.vercel.app/">
+                    <span itemprop="name">Budget Planner - Financial Management</span>
+                </a>
+                <meta itemprop="position" content="3" />
+            </li>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a itemprop="item" href="https://github.com/Shariar-hash">
+                    <span itemprop="name">GitHub - Montasir Majumder Shariar</span>
+                </a>
+                <meta itemprop="position" content="4" />
+            </li>
+        </ol>
+    </nav>
+    
     <header>
         <nav>
             <div class="left">Shariars portfolio</div>
@@ -2097,17 +2198,33 @@ html {
         <h1>Get In Touch</h1>
         <div class="contact-container">
             <div class="social-links">
-                <a href="https://github.com/Shariar-hash" class="social-link github" target="_blank">
+                <!-- Priority Project Links for Google Sitelinks -->
+                <a href="https://quizthon.vercel.app/" class="social-link project-link" target="_blank" rel="noopener">
+                    <svg class="social-logo" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    <span>Quizathon - Quiz Platform</span>
+                </a>
+                
+                <a href="https://budget-planner-ochre.vercel.app/" class="social-link project-link" target="_blank" rel="noopener">
+                    <svg class="social-logo" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
+                    </svg>
+                    <span>Budget Planner - Finance App</span>
+                </a>
+                
+                <a href="https://github.com/Shariar-hash" class="social-link github" target="_blank" rel="noopener">
                     <svg class="social-logo" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/>
                     </svg>
-                    <span>GitHub</span>
+                    <span>GitHub - Source Code</span>
                 </a>
-                <a href="https://bd.linkedin.com/in/montasir-majumder-shariar-227a1b22a" class="social-link linkedin" target="_blank">
+                
+                <a href="https://bd.linkedin.com/in/montasir-majumder-shariar-227a1b22a" class="social-link linkedin" target="_blank" rel="noopener">
                     <svg class="social-logo" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M19 0H5a5 5 0 00-5 5v14a5 5 0 005 5h14a5 5 0 005-5V5a5 5 0 00-5-5zM8 19H5V8h3v11zM6.5 6.732c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765c1.396-2.586 7-2.777 7 2.476V19z"/>
                     </svg>
-                    <span>LinkedIn</span>
+                    <span>LinkedIn Profile</span>
                 </a>
                 <a href="mailto:montasirmajumdar123@gmail.com?subject=Hello%20from%20Portfolio%20Visitor&body=Hi%20Montasir%2C%0A%0AI%20visited%20your%20portfolio%20and%20would%20like%20to%20connect.%0A%0ABest%20regards" class="social-link email" title="Send me an email">
                     <svg class="social-logo" viewBox="0 0 24 24">
