@@ -6,22 +6,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <!-- Website Title -->
-        <title>Montasir Majumder Shariar</title>
+        <title>Montasir Shariar - Software Developer | Creator of BRACU Loop</title>
         
         <!-- Enhanced Meta Description (SEO) -->
-        <meta name="description" content="Montasir Majumder Shariar - Web Developer & Student at BRAC University. Portfolio showcasing live projects: Quizathon quiz platform (quizthon.vercel.app), Budget Planner financial app (budget-planner-ochre.vercel.app), PetShop Platform, Daily Checkmate. View GitHub repositories and development work.">
-        <meta name="keywords" content="Montasir Majumder Shariar, Shariar, Web Developer, Student, BRAC University, Quizathon quiz platform, Budget Planner financial app, Budget Buddy, PetShop Platform, Daily Checkmate, JavaScript developer, HTML CSS expert, React developer, GitHub Shariar-hash, Portfolio website, Interactive quiz application, Financial management software, Pet adoption platform, Productivity application, Duke of Edinburgh Bronze Award, Bangladesh web developer">
+        <meta name="description" content="Montasir Shariar, Software Developer and BRAC University student. Creator of BRACU Loop - comprehensive platform for university students with 500+ active users.">
+        <meta name="keywords" content="Montasir Shariar, BRACU Loop, Software Developer, BRAC University, React Developer, TypeScript, Full Stack Developer, Student Platform">
         <meta name="author" content="Montasir Majumder Shariar">
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
         <meta name="googlebot" content="index, follow">
         <meta name="bingbot" content="index, follow">
         
         <!-- Project-specific meta tags for individual indexing -->
-        <meta name="DC.creator" content="Montasir Majumder Shariar">
-        <meta name="DC.subject" content="Quizathon interactive quiz platform by Montasir Majumder Shariar">
-        <meta name="DC.subject" content="Budget Planner financial management app by Montasir Majumder Shariar">
-        <meta name="DC.subject" content="PetShop Platform marketplace by Montasir Majumder Shariar">
-        <meta name="DC.subject" content="Daily Checkmate productivity app by Montasir Majumder Shariar">
+        <meta name="DC.creator" content="Montasir Shariar">
+        <meta name="DC.subject" content="BRACU Loop student platform by Montasir Shariar">
+        <meta name="DC.subject" content="Quizathon interactive quiz platform by Montasir Shariar">
+        <meta name="DC.subject" content="Budget Planner financial management app by Montasir Shariar">
+        <meta name="DC.subject" content="PetShop Platform marketplace by Montasir Shariar">
+        <meta name="DC.subject" content="Daily Checkmate productivity app by Montasir Shariar">
         
         <!-- Geographic and Contact Information -->
         <meta name="geo.region" content="BD">
@@ -71,16 +72,18 @@
         {
           "@context": "https://schema.org",
           "@type": "Person",
-          "name": "Montasir Majumder Shariar",
-          "alternateName": "Shariar",
-          "jobTitle": "Web Developer",
-          "description": "Web Developer and Student specializing in creating interactive web applications",
-          "url": "https://alriar.me/",
-          "email": "montasirmajumdar123@gmail.com",
-          "image": "https://alriar.me/profile.png",
-          "sameAs": [
-            "https://github.com/Shariar-hash",
-            "https://www.facebook.com/profile.php?id=100048866600298"
+          "name": "Montasir Shariar",
+          "jobTitle": "Software Developer",
+          "url": "https://alriar.me",
+          "sameAs": ["https://github.com/Shariar-hash"],
+          "alumniOf": "BRAC University",
+          "hasCreated": [
+            {
+              "@type": "WebSite", 
+              "name": "BRACU Loop",
+              "url": "https://bracu-loop.vercel.app",
+              "description": "Student platform for BRAC University"
+            }
           ],
           "knowsAbout": [
             "Web Development",
@@ -1224,6 +1227,153 @@ html {
     transform: scale(1.2) rotate(5deg);
 }
 
+/* Featured Project Styles */
+.featured-project {
+    position: relative;
+    border: 3px solid #6c7b7f !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+.featured-project::after {
+    content: '⭐';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #6c7b7f;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.featured-badge {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.project-stats {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+.stat-badge {
+    background: rgba(78, 205, 196, 0.2);
+    border: 1px solid #4ecdc4;
+    color: #4ecdc4;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.project-tech {
+    display: flex;
+    gap: 8px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+.tech-badge {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.project-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.live-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.live-link:hover {
+    background: linear-gradient(135deg, #764ba2, #667eea);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Featured Section Styles */
+.featured-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
+    padding: 60px 20px;
+    color: #495057;
+    text-align: center;
+    margin: 0;
+}
+
+.featured-section .container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.featured-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.featured-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    opacity: 0.8;
+    color: #6c757d;
+}
+
+.featured-section .btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.featured-section .btn:hover {
+    background: linear-gradient(135deg, #764ba2, #667eea);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .projects-container {
@@ -1983,8 +2133,15 @@ html {
             </div>
         </section>
         
-        
-
+        <!-- Featured Project Section -->
+        <section id="featured-project" class="featured-section">
+            <div class="container">
+                <h2>Featured Project: BRACU Loop</h2>
+                <p>Comprehensive platform for BRAC University students featuring faculty reviews, course notes, and academic resources.</p>
+                <p><strong>Tech Stack:</strong> React, TypeScript, Supabase, Vercel</p>
+                <a href="https://bracu-loop.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit BRACU Loop</a>
+            </div>
+        </section>
 
         <section id="education" class="secondSection">
             <h1>Education</h1>
@@ -2049,6 +2206,38 @@ html {
         <section id="projects" class="thirdSection">
             <h1>Projects</h1>
             <div class="projects-container">
+                
+                <!-- Featured Project: BRACU Loop -->
+                <div class="project-card featured-project">
+                    <h2>🌟 BRACU Loop <span class="featured-badge">Featured</span></h2>
+                    <div class="project-content">
+                        <div class="project-description">
+                            <p><strong>Comprehensive student platform for BRAC University</strong></p>
+                            <p>A revolutionary platform designed specifically for BRAC University students, providing:</p>
+                            <ul>
+                                <li>Faculty reviews and ratings system</li>
+                                <li>Course notes and study materials library</li>
+                                <li>Academic resources sharing platform</li>
+                                <li>Student community and collaboration tools</li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="tech-badge">React</span>
+                                <span class="tech-badge">TypeScript</span>
+                                <span class="tech-badge">Supabase</span>
+                                <span class="tech-badge">Vercel</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://bracu-loop.vercel.app/" class="live-link" target="_blank">
+                                    🚀 Live Project
+                                </a>
+                                <a href="https://github.com/Shariar-hash" class="github-link" target="_blank">
+                                    <i class="fab fa-github"></i> View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="project-card">
                     <h2>PetShop Platform</h2>
                     <div class="project-content">

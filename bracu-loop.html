@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shariar - BRACU Loop</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="BRACU Loop is a comprehensive student platform for BRAC University created by Montasir Shariar. Features faculty reviews, course notes, and academic resources with 500+ active users and 50GB+ study materials.">
+    <meta name="keywords" content="BRACU Loop, Montasir Shariar, BRAC University, Student Platform, React, TypeScript, Supabase, Faculty Reviews, Course Notes">
+    <meta name="author" content="Montasir Shariar">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="BRACU Loop - Student Platform by Montasir Shariar">
+    <meta property="og:description" content="Comprehensive platform for BRAC University students with 500+ active users and 50GB+ study materials.">
+    <meta property="og:url" content="https://alriar.me/bracu-loop.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Montasir Shariar Portfolio">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="BRACU Loop - Student Platform by Montasir Shariar">
+    <meta name="twitter:description" content="Comprehensive platform for BRAC University students with 500+ active users and 50GB+ study materials.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://alriar.me/bracu-loop.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="profile.png">
+    
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .description {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 0.5rem;
+            min-width: 150px;
+        }
+        
+        .stat h3 {
+            margin: 0;
+            font-size: 2rem;
+            color: #4ecdc4;
+        }
+        
+        .stat p {
+            margin: 0.5rem 0 0 0;
+            opacity: 0.9;
+        }
+        
+        .tech-stack {
+            margin: 2rem 0;
+        }
+        
+        .tech-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 1rem;
+        }
+        
+        .tech-tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .redirect-info {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            border-left: 4px solid #4ecdc4;
+        }
+        
+        .developer-info {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        
+        .countdown {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #4ecdc4;
+            margin: 1rem 0;
+        }
+        
+        a {
+            color: #4ecdc4;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 1rem;
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .stats {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>BRACU Loop</h1>
+        <p class="subtitle">Comprehensive Student Platform for BRAC University</p>
+        
+        <div class="description">
+            <p>BRACU Loop is a revolutionary platform designed specifically for BRAC University students, providing a centralized hub for academic resources, faculty reviews, and collaborative learning.</p>
+        </div>
+        
+        <div class="stats">
+            <div class="stat">
+                <h3>500+</h3>
+                <p>Active Users</p>
+            </div>
+            <div class="stat">
+                <h3>50GB+</h3>
+                <p>Study Materials</p>
+            </div>
+            <div class="stat">
+                <h3>100%</h3>
+                <p>Student Focused</p>
+            </div>
+        </div>
+        
+        <div class="tech-stack">
+            <h3>Technology Stack</h3>
+            <div class="tech-tags">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Supabase</span>
+                <span class="tech-tag">Vercel</span>
+            </div>
+        </div>
+        
+        <div class="redirect-info">
+            <p><strong>🚀 Redirecting to BRACU Loop in <span class="countdown" id="countdown">3</span> seconds...</strong></p>
+            <p>You will be automatically redirected to the live platform.</p>
+        </div>
+        
+        <div class="developer-info">
+            <h3>Developer Information</h3>
+            <p><strong>Created by:</strong> Montasir Shariar</p>
+            <p><strong>University:</strong> BRAC University</p>
+            <p><strong>Program:</strong> Computer Science and Engineering</p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/Shariar-hash" target="_blank">@Shariar-hash</a></p>
+            <p><strong>Portfolio:</strong> <a href="https://alriar.me" target="_blank">alriar.me</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Redirect countdown
+        let seconds = 3;
+        const countdownElement = document.getElementById('countdown');
+        
+        const countdownTimer = setInterval(() => {
+            seconds--;
+            countdownElement.textContent = seconds;
+            
+            if (seconds <= 0) {
+                clearInterval(countdownTimer);
+                window.location.href = 'https://bracu-loop.vercel.app/';
+            }
+        }, 1000);
+        
+        // Immediate redirect if user clicks anywhere
+        document.addEventListener('click', () => {
+            window.location.href = 'https://bracu-loop.vercel.app/';
+        });
+    </script>
+</body>
+</html>
